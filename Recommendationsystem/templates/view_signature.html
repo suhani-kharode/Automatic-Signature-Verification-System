@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification System</title>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="wrapper col1">
+        <div id="header" class="clear">
+            <div class="fl_left">
+                <h1><a href="index">Signature Verification</a></h1>
+            </div>
+            <div class="fl_right">
+                <ul style="text-transform: uppercase;">
+                    <li><a href="admin_dashboard">Home</a></li>
+                    <li><a href="upload_signature_by_admin">Upload Signature</a></li>
+                    <li class="active"><a href="view_signature">View Signatures</a></li>
+                    <li><a href="admin_logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper col2" style="background-color:rgb(18, 148, 188)">
+        <div id="topbar">
+            <div id="crumb">
+                <center>
+                    <h2 style="font-size:50px;">View Signatures</h2>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h3>Uploaded Signatures</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Signature</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for signature in signatures %}
+                    <tr>
+                        <td>{{ signature.1 }}</td>  <!-- signature[1] is the name -->
+                        <td>
+                            <img src="http://127.0.0.1:8000/{{signature.2}}" alt="Signature" width="100" height="50" />
+                        </td> <!-- signature[2] is the signature path -->
+                        <td>
+                            <form action="{% url 'delete_signature' signature.0 %}" method="POST">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+</body>
+</html>

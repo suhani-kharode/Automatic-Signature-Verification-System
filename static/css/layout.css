@@ -1,0 +1,132 @@
+/*
+Template Name: Professional Web2
+Coded By: Design Coder - http://www.design-coder.com/
+Design By: http://psd.tutsplus.com/tutorials/interface-tutorials/create-a-professional-web-2-0-layout/
+Licence: <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>
+*/
+
+@import url(homepage.css);
+
+body{margin:0; padding:0; font-size:14px; font-family:Arial, Helvetica, sans-serif; color:#FFFFFF; background-color:#202020;}
+
+img{margin:0; padding:0; border:none;}
+.justify{text-align:justify;}
+.bold{font-weight:bold;}
+.center{text-align:center;}
+.right{text-align:right;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:inline-block;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+.imgl, .imgr{border:1px solid #272727; padding:5px;}
+.imgl{float:left; margin:0 7px 7px 0; clear:left;}
+.imgr{float:right; margin:0 0 7px 7px; clear:right;}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper{display:block; width:100%; margin:0; text-align:left;}
+
+div.wrapper h1, div.wrapper h2, div.wrapper h3, div.wrapper h4, div.wrapper h5, div.wrapper h6{margin:0; padding:0; font-size:28px; font-weight:normal; font-family:Georgia, "Times New Roman", Times, serif; line-height:normal;}
+
+div.wrapper .readmore{margin:0; padding:0; font-size:12px; text-align:center;}
+div.wrapper .readmore a{padding:6px 0 7px 10px; color:#F2F2F2; background:url("../images/readmore_a.png") top left no-repeat;}
+div.wrapper .readmore span{padding:6px 30px 7px 0; background:url("../images/readmore_a_span.png") top right no-repeat;}
+
+.col1{color:#FFFFFF; background:url("../images/hbg.png") top left repeat-x #1E1E1E; border-bottom:1px solid #A6D166;}
+.col2{color:#FFFFFF; background:url("../images/intro_bg.png") top left repeat-x #528037; border-bottom:1px solid #FFFFFF;}
+.col3{color:#2F3235; background-color:#E8E8E8;}
+.col3 a{color:#7BA344; background-color:#E8E8E8;}
+.col4{color:#212121; background-color:#E8E8E8; padding-bottom:50px;}
+.col5{color:#D2D2D2; background:url("../images/footer_bg.png") top left repeat-x #202020; border-bottom:1px solid #151515;}
+.col5 a{color:#7BA344; background-color:#202020;}
+.col6{color:#515151; background-color:#202020; border-top:1px solid #2F2F2F;}
+
+/* ----------------------------------------------Generalise-------------------------------------*/
+
+#header, #topbar, #container, #socialbar, #footer, #copyright{position:relative; margin:0 auto; display:block; width:960px;}
+
+/* ----------------------------------------------Header-------------------------------------*/
+
+#header{padding:30px 0;}
+#header h1{margin:0; padding:0; font-size:32px; line-height:normal;}
+#header h1, #header h1 a{color:#83AB48; background-color:transparent;}
+#header ul{margin:5px 0 0 0; padding:0; list-style:none; text-transform:lowercase;}
+#header li{display:inline; margin:0 15px 0 0; padding:0;}
+#header li.last{margin-right:0;}
+
+
+#header li a{padding:5px 0 7px 10px; font-size:20px; color:#F2F2F2;}
+#header li a span{padding:5px 10px 7px 0;}
+
+#header li.active a, #header li a:hover{background:url("../images/topnav_a.png") top left no-repeat;}
+#header li.active a span, #header li a:hover span{background:url("../images/topnav_a_span.png") top right no-repeat;}
+
+/* ----------------------------------------------Intro-------------------------------------*/
+
+#topbar{padding:30px 0;}
+
+#topbar #crumb{display:block; width:100%; text-align:right;}
+
+/* ----------------------------------------------Content-------------------------------------*/
+
+#container{padding:50px 0;}
+#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{color:#80AA47; background-color:#E8E8E8;}
+
+#container #content{display:block; width:600px; float:left;}
+#container #column{display:block; width:250px; float:right;}
+
+/* ----------------------------------------------Social Bookmarks-------------------------------------*/
+
+#socialbar{height:80px; padding:0; background:url("../images/socialbar_bg.png") bottom left repeat-x;}
+#socialbar a{color:#FFFFFF; background-color:transparent;}
+
+#socialbar .fl_left{display:block; width:435px; height:50px; margin:10px 0 0 0; padding:20px 0 0 95px; background:url("../images/twitter_feed_bg.png") top left no-repeat;}
+#socialbar .fl_left p{margin:0; padding:0;}
+#socialbar .fl_left a{font-style:italic;}
+
+#socialbar .fl_right{display:block; height:50px;}
+#socialbar .fl_right ul{margin:0; padding:0; list-style:none;}
+#socialbar .fl_right ul li{display:block; float:left; width:52px; height:52px; margin:0 20px 0 0;}
+#socialbar .fl_right ul li a{display:block; width:52px; height:52px; background:url("../images/socialbookmarks_sprite.png") top left no-repeat; text-indent:-9999em;}
+#socialbar .fl_right li.twitter a{background-position:0 -1px;}
+#socialbar .fl_right li.linkedin a{background-position:-72px -1px;}
+#socialbar .fl_right li.facebook a{background-position:-144px -1px;}
+#socialbar .fl_right li.flickr a{background-position:-216px -1px;}
+
+/* ----------------------------------------------Footer-------------------------------------*/
+
+#footer{padding:50px 0 30px 0; line-height:1.4em;}
+#footer .box{display:block; float:left; width:290px; margin:0 45px 0 0; padding:0;}
+
+#footer .title{display:block; margin:0 0 15px 0; border-bottom:1px solid #2F2F2F;}
+#footer .title p{margin:0; padding:0 0 8px 0; border-bottom:1px solid #151515;}
+#footer ul{margin:0; padding:0; list-style:none;}
+#footer li{margin:0 0 25px 0;}
+#footer h2{color:#80AA47; background-color:#202020;}
+
+#footer form, #footer fieldset, #footer legend{margin:0; padding:0; border:none;}
+#footer legend, #footer label{display:none;}
+#footer input, #footer textarea{display:block; width:191px; margin:0 0 15px 0}
+#footer input, #footer textarea, #footer select, #footer button{font-size:14px; color:#FFFFFF; font-family:Arial, Helvetica, sans-serif;}
+#footer input{height:20px; padding:5px 10px 0 10px; background:url("../images/form_input_bg.png") top left no-repeat; border:none}
+#footer textarea{height:101px; padding:7px 10px; overflow:auto; background:url("../images/form_textarea_bg.png") top left scroll; border:none}
+
+#footer button, #footer form button span{margin:0; text-align:right; line-height:1.4em;}
+#footer form button{position:relative; height:29px; padding:0 0 0 10px; border:none; text-transform:uppercase; font-size:12px; font-weight:bold; cursor:pointer; overflow:visible; background:url("../images/readmore_a.png") top left no-repeat}
+#footer form button span{display:block; position:relative; height:23px; margin:-1px 0 0 0; padding:6px 30px 0 0; white-space:nowrap; background:url("../images/readmore_a_span.png") top right no-repeat; line-height:normal}
+
+#footer .last{margin:0;}
+#footer .readmore{text-align:right;}
+
+/* ----------------------------------------------Copyright-------------------------------------*/
+
+#copyright{padding:20px 0;}
+#copyright, #copyright a{color:#515151; background-color:#202020;}
+#copyright p{margin:0; padding:0;}

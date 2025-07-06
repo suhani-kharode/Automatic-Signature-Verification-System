@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <title>Signature Verification System</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css" />
+    <!-- Conditional Styles for IE -->
+    <!--[if lte IE 8]><style type="text/css">@import url('styles/ie.css');</style><![endif]-->
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.defaultvalue.js' %}"></script>
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $("#name, #email, #message").defaultvalue("Name", "Email", "Message");
+        });
+    </script>
+
+    <!-- Inline Styles for Button -->
+    <style>
+        .last a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #7EBC12;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect */
+        .last a:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Page Wrapper -->
+    <div class="wrapper col1">
+        <header id="header" class="clear">
+            <div class="fl_left">
+                <h1><a href="#">Signature Verification</a></h1>
+            </div>
+            <div class="fl_right">
+                <ul style="text-transform: uppercase;">
+                    <li class="active"><a href="index"><span>Home</span></a></li>
+                    <li><a href="about"><span>About</span></a></li>
+                    <li><a href="user_registration"><span>Register</span></a></li>
+                    <li><a href="user_login"><span>Login</span></a></li>
+                    <li class="last"><a href="admin_login"><span>Admin Login</span></a></li>
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <div class="wrapper col2">
+        <div id="topbar">
+            <div id="crumb">
+                <center><h2 style="font-size:50px;">About Us!!!!</h2></center>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="wrapper col3">
+        <div id="container">
+            <div id="content">
+                <p style="text-align: justify; font-size:25px;">
+                    The <a href="page1">Signature Verification System</a> offers cutting-edge technology to authenticate signatures, ensuring the integrity and security of documents. With advanced algorithms and machine learning techniques, our system accurately analyzes handwriting patterns to verify signatures with high precision and efficiency.
+                </p>
+                <p style="text-align: justify; font-size:25px;">
+                    Whether it's for legal documents, financial transactions, or identity verification, our solution provides reliable authentication, preventing fraud and unauthorized access. Trust in our Signature Verification System for seamless, trustworthy, and streamlined verification processes, empowering organizations and individuals with peace of mind and confidence in their document authentication needs.
+                </p>
+            </div>
+
+            <div id="column">
+                <img src="{% static 'images/img2.gif' %}" alt="Signature Verification" style="height:400px; width:400px;" />
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="wrapper col3">
+        <div id="container" style="display: flex;">
+            <div id="column">
+                <img src="{% static 'images/img.gif' %}" alt="Verification System" style="height: 400px; width: 400px;" />
+            </div>
+
+            <div id="content" style="flex: 1; margin-left: 170px;">
+                <p style="text-align: justify; font-size:25px;">
+                    Whether it's for legal documents, financial transactions, or identity verification, our solution provides reliable authentication, preventing fraud and unauthorized access. Trust in our Signature Verification System for seamless, trustworthy, and streamlined verification processes, empowering organizations and individuals with peace of mind and confidence in their document authentication needs.
+                </p>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+<div class="wrapper col6">
+    <div id="copyright" class="clear">
+    </div>
+</div>
+<!-- END PAGE SOURCE -->
+
+</body>
+</html>

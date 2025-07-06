@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Inline Styles -->
+    <style>
+        body {
+            background-color:white;
+        }
+
+        /* Container styling */
+        #container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, white,rgb(18, 188, 179), #C8C8C8, grey,rgb(18, 188, 179));
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            transition: transform 0.3s ease;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Form styling */
+        .signature-upload-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Input field styling */
+        .signature-upload-form input[type="text"],
+        .signature-upload-form input[type="file"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            width: 100%;
+        }
+
+        /* Label styling */
+        .signature-upload-form label {
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Button styling */
+        .signature-upload-form button {
+            padding: 12px;
+            background-color:rgb(41, 74, 219);
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        /* Button hover effect */
+        .signature-upload-form button:hover {
+            background-color:rgb(17, 35, 138);
+        }
+
+        /* Message list styling */
+        .message-list {
+            margin-top: 20px;
+            padding-left: 0;
+            list-style-type: none;
+        }
+
+        /* Individual message styling */
+        .message-list li {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="wrapper col1">
+        <div id="header" class="clear">
+            <div class="fl_left">
+                <h1><a href="page1">Signature Verification</a></h1>
+            </div>
+            <div class="fl_right">
+                <ul style="text-transform: uppercase;">
+                    <li class="active"><a href="admin_dashboard"><span>Home</span></a></li>
+                    <li><a href="upload_signature_by_admin"><span>Upload Signature</span></a></li>
+                    <li><a href="view_signature"><span>View Signature</span></a></li>
+                    <li><a href="admin_logout"><span>Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="wrapper col2" style="background-color: rgb(49, 154, 224)">
+        <div id="topbar">
+            <div id="crumb">
+                <center>
+                    <h2>Upload Signature</h2>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signature Upload Section -->
+    <div class="container" id="container">
+        <div class="row">
+            <form method="POST" enctype="multipart/form-data" action="upload_signature_by_admin" class="signature-upload-form">
+                {% csrf_token %}
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div>
+                    <label for="signature_image">Signature Image:</label>
+                    <input type="file" id="signature_image" name="signature_image" accept="image/*" required>
+                </div>
+
+                <button type="submit">Upload</button>
+            </form>
+
+            {% if messages %}
+                <ul class="message-list">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+</body>
+
+</html>

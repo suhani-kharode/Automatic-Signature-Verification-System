@@ -1,0 +1,175 @@
+{% load static %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <title>Signature Verification System</title>
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- External Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- Static Scripts -->
+    <script src="{% static 'js/jquery.defaultvalue.js' %}"></script>
+    <script src="{% static 'js/jquery.cycle.lite.min.js' %}"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        .carousel-item {
+            height: 500px;
+        }
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .carousel-caption h5 {
+            color: #ffffff;
+            font-size: 24px;
+            text-align: center;
+        }
+        .last a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #7EBC12;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .last a:hover {
+            background-color: darkgreen;
+        }
+        .display-4 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #333;
+            opacity: 0;
+            transform: translateX(-100%);
+            animation: slideInLeftAnimation 0.5s ease forwards;
+        }
+        @keyframes slideInLeftAnimation {
+            0% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+
+    <!-- Initialize Carousel -->
+    <script>
+        $(document).ready(function () {
+            $("#header-carousel-new").carousel();
+            $("#header-carousel-original").carousel();
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            setInterval(function () {
+                $("#header-carousel-new").carousel('next');
+                $("#header-carousel-original").carousel('next');
+            }, 1000);
+        });
+    </script>
+</head>
+
+<body>
+<!-- Start Page Source -->
+<div class="wrapper col1">
+    <div id="header" class="clear">
+        <div class="fl_left">
+            <h1>
+                <a href="#">
+                    <h1 class="display-4 animated slideInLeft" style="font-size:40px;">
+                        <center>Signature Verify</center>
+                    </h1>
+                </a>
+            </h1>
+        </div>
+        <div class="fl_right">
+            <ul style="text-transform: uppercase;">
+                <li class="active"><a href="user_dashboard"><span>Home</span></a></li>
+                <li><a href="upload_signature"><span>Upload Signature</span></a></li>
+                <li><a href="verify_signature"><span>Verify Signature</span></a></li>
+                <li class="last"><a href="user_logout"><span>Logout</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content Area -->
+<h1 class="display-4 animated slideInLeft">
+    <center>Welcome User!!!!!</center>
+</h1>
+
+<!-- New Carousel -->
+<div id="header-carousel-new" class="carousel slide carousel-fade" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'images/img.gif' %}" alt="Image" height="500">
+            
+        </div>
+        
+    </div>
+</div>
+
+<!-- Content Area -->
+<div class="wrapper col3">
+    <div id="container">
+        <div id="content">
+            <p style="text-align: justify; font-size: 25px;">
+                The <a href="page1">Signature Verification System</a> offers cutting-edge technology to authenticate signatures, ensuring the integrity and security of documents. With advanced algorithms and machine learning techniques, our system accurately analyzes handwriting patterns to verify signatures with high precision and efficiency.
+            </p>
+            <p style="text-align: justify; font-size: 25px;">
+                Whether it's for legal documents, financial transactions, or identity verification, our solution provides reliable authentication, preventing fraud and unauthorized access. Trust in our Signature Verification System for seamless, trustworthy, and streamlined verification processes, empowering organizations and individuals with peace of mind and confidence in their document authentication needs.
+            </p>
+        </div>
+
+        <div id="column">
+            <img src="{% static 'images/img1.gif' %}" alt="" style="height: 400px; width: 400px;">
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<!-- Second Content Area -->
+<div class="wrapper col3" style="background-color:black;">
+    <div id="container" style="display: flex;">
+        <div id="column">
+            <img src="{% static 'images/sig2.gif' %}" alt="" style="height: 400px; width: 400px;">
+        </div>
+        <div id="content" style="flex: 1;">
+            <p style="text-align: justify; font-size: 25px; margin-left: 170px;color:white;">
+                Whether it's for legal documents, financial transactions, or identity verification, our solution provides reliable authentication, preventing fraud and unauthorized access. Trust in our Signature Verification System for seamless, trustworthy, and streamlined verification processes, empowering organizations and individuals with peace of mind and confidence in their document authentication needs.
+            </p>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="wrapper col6">
+    <div id="copyright" class="clear">
+    </div>
+</div>
+<!-- End Page Source -->
+</body>
+</html>

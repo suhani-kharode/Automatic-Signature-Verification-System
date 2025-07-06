@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification System</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="imagetoolbar" content="no" />
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Inline Styles -->
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .login-container {
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            width: 120%;
+            height: 350px;
+            margin: 0 auto;
+            margin-top: 100px;
+            background: linear-gradient(135deg, white,rgb(18, 188, 179), #C8C8C8, grey,rgb(18, 188, 179));
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .login-form h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color:rgb(5, 109, 122);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Add animation effect */
+        .login-container:hover {
+            background-color: #7EBC12;
+        }
+
+        #image-col {
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        #form-col {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .last a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #7EBC12;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover effect */
+        .last a:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="wrapper col1">
+        <div id="header" class="clear">
+            <div class="fl_left">
+                <h1><a href="page1">Signature Verification</a></h1>
+            </div>
+            <div class="fl_right">
+                <ul style="text-transform: uppercase;">
+                    <li class="active"><a href="admin_dashboard"><span>Home</span></a></li>
+                    <li><a href="upload_signature_by_admin"><span>Upload Signature</span></a></li>
+                    <li><a href="view_signature"><span>View Signature</span></a></li>
+                    <li><a href="admin_logout"><span>Logout</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="wrapper col2" style="background-color:rgb(18, 148, 188)">
+        <div id="topbar">
+            <div id="crumb">
+                <center>
+                    <h2 style="font-size:50px;">Admin Dashboard</h2>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="container" id="container">
+        <div class="row">
+            <!-- Image Column -->
+            <div class="col-md-6" id="image-col">
+                <img src="{% static 'images/admindash.gif' %}" alt="Image" class="img-fluid" style="margin-top:100px; height:350px; width:500px;">
+            </div>
+
+            <!-- Form Column -->
+            <div class="col-md-6" id="form-col" style="display: none;">
+                <div class="login-container" style="text-align:justify;">
+                    <p>Welcome to your Signature Management Dashboard. Here, you have complete control over all signature images within the system. Whether you need to upload new signatures, review existing ones, or update their details, everything can be done from this central location. The “Upload Signature” section allows you to quickly add new images, while the “View Signatures” page provides an organized list of all uploaded files, making it simple to find and manage them. Please ensure that all signature images meet the specified format and size requirements to avoid upload issues. You can also filter and search for specific signatures based on their name or associated user, streamlining the process of finding what you need. If any updates are necessary, you can edit or delete signatures with just a few clicks. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+
+    <!-- Inline Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("form-col").style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>
